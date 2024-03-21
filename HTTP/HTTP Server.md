@@ -9,7 +9,7 @@
         public static void main(String[] args) {
            String message = """
             HTTP/-1 200 OK
-            
+
             Hello, world!
             """;
             System.out.println(message);
@@ -68,7 +68,7 @@ java7 이전에는 close를 호출하기 위해 ```try-catch-finally```를 이�
 
 AutoCloseable 인터페이스를 구현하고 있는 자원에 대해 ```try-with-resources```를 적용 가능하도록 하였고, 이로 인해 코드가 유연해지고 모든 에러를 잡을 수 있게 되었다.
 
-기존의 Closeable에 부모 인터페이스로 AutoCloesable을 추가해서 기존에 구현된 자원 클래스들 모두 ```try-with-resources```가 사용가능해졌다.
+기존의 Closeable에 부모 인터페이스로 AutoCloseable을 추가해서 기존에 구현된 자원 클래스들 모두 ```try-with-resources```가 사용가능해졌다.
 
 try-catch-finally가 아닌 ```try-with-resources```를 사용해야 하는 이유는 다음과 같다.
 
@@ -84,9 +84,10 @@ try-catch-finally로 반납할 경우에는 에러 스택 트레이스가 누락
     // Response
     }
 ```
+
 ### Java ServerSocket
 
-Java에서 네트워크 서버 애플리케이션을 개발하는 데 사용되는 클래스이다. 
+Java에서 네트워크 서버 애플리케이션을 개발하는 데 사용되는 클래스이다.
 
 이 클래스는 TCP(전송 제어 프로토콜)를 기반으로 한 서버 소켓을 생성하고 관리하기위해 사용된다.<br/>
 TCP는 연결 지향적인 프로토콜로, 데이터를 안정적으로 전송하는 데 사용된다.
@@ -115,6 +116,80 @@ Non-Blocking
 - 요청한 작업을 마칠 수 없다면 완료되지 않았다는 상태와 함께 즉시 return 한다.
 - 제어권을 호출자에게 바로 넘겨준다.
 - 이전에 호출하고 결과를 기다리는 것이 아니라 다른 친구에게 작업을 시키고 호출자의 입장에서는 계속 다른 작업을 수행한다.
-- Thread 관점으로 보면 하나의 Thread가 여러 개의 I를 처리 할 수 있다.
+- Thread 관점으로 보면 하나의 Thread가 여러 개의 IO를 처리 할 수 있다.
 
 ### Java HTTP Server
+
+// 강의 소스
+```java
+package _study;
+
+import com.sun.net.httpserver.Headers;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpServer;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.URI;
+import java.util.List;
+
+public class App {
+
+    public static void main(String[] args) throws IOException {
+        App app = new App();
+        app.run();
+
+    }
+
+    private void run() throws IOException {
+        InetSocketAddress address = new InetSocketAddress(8080);
+        HttpServer httpServer = HttpServer.create(address, 0);
+
+        httpServer.createContext("/", exchange -> {
+            // 1. Request
+            String method = exchange.getRequestMethod();
+            System.out.println("method: " + method);
+            URI uri = exchange.getRequestURI();
+            String path = uri.getPath();
+
+            System.out.println("path: " + path);
+
+            Headers headers = exchange.getRequestHeaders();
+            for (String key : headers.keySet()) {
+                List<String> values = headers.get(key);
+                System.out.println(key);
+            }
+
+            InputStream inputStream = exchange.getRequestBody();
+            String body = new String(inputStream.readAllBytes());
+
+            System.out.println(body);
+
+            // 2. Response
+            String content = "Hello world \n";
+            sendContent(exchange, content);
+        });
+
+        httpServer.createContext("/hi", exchange -> {
+            String content = "wow hihi!! \n";
+            sendContent(exchange, content);
+        });
+        httpServer.start();
+
+    }
+
+    private static void sendContent(HttpExchange exchange, String content) throws IOException {
+
+        byte[] bytes = content.getBytes();
+
+        exchange.sendResponseHeaders(200, bytes.length);
+
+        OutputStream outputStream = exchange.getResponseBody();
+        outputStream.write(bytes);
+        outputStream.flush();
+    }
+}
+
+```
