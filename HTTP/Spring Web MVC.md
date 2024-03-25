@@ -3,7 +3,7 @@
 ### Spring Boot
 
 Spring은 Java 기반 애플리케이션 개발을 지원하는 오픈소스 애플리케이션 프레임워크이다.<br/>
-순수 자바 객체(*POJO)만을 사용하여 복잡성을 제거하고, 단순하고 가벼운 코드로 기업용 애플리케이션을 개발하기 위한 목적으로 개발되었다.
+순수 자바 객체(\*POJO)만을 사용하여 복잡성을 제거하고, 단순하고 가벼운 코드로 기업용 애플리케이션을 개발하기 위한 목적으로 개발되었다.
 
 Spring의 특징은 다음과 같다.
 
@@ -13,8 +13,8 @@ Spring의 특징은 다음과 같다.
 - AOP 지원: 애플리케이션의 핵심 비즈니스 로직과 부가적인 기능을 분리하여 모듈화할 수 있다.
 - 웹 개발 지원: 웹 애플리케이션 개발을 위한 다양한 기능과 웹 프레젠테이션 계층을 제공한다. 스프링 MVC는 유연하고 확장 가능한 웹 애플리케이션을 개발할 수 있는 MVC 아키텍처를 지원한다.<br/>
 
-
 하지만 Spring에도 문제점이 있다.
+
 - 설정의 복잡성
 - 러닝커브
 - 의존성 관리 문제
@@ -39,7 +39,6 @@ Spring Boot는 기본적인 설정과 보일러 플레이트 코드의 작성을
 
 자바에서의 모듈은 여러 패키지들의 모음이고, 패키지는 여러 클래스들의 모음이다.
 
-
 ### Spring initializer
 
 [Spring initializer](https://spring.io/guides/gs/spring-boot)는 Spring Boot 기반으로 프로젝트를 생성해주는 사이트이다.
@@ -48,7 +47,7 @@ Spring Boot는 기본적인 설정과 보일러 플레이트 코드의 작성을
 
 - Project: SpringBoot를 빌드하고 배포하는 방식이다(주로 Gradle 사용)
 - Language: 사용하고자하는 언어를 선택하면 된다. (일반적으로 Java가 사용됨)
-- SpringBoot: 버전을 선택해 준다. SNAPSHOT은 데모버전이고 높은 버전은 높은 자바버전을 필요로 하므로 SNAPSHOT이 없는 낮은 버전을 선택하는 것이 좋다. 
+- SpringBoot: 버전을 선택해 준다. SNAPSHOT은 데모버전이고 높은 버전은 높은 자바버전을 필요로 하므로 SNAPSHOT이 없는 낮은 버전을 선택하는 것이 좋다.
 - Group: 기업 도메인명
 - Artifact: 빌드되어 나올 결과물
 - Name: 프로젝트명 (일반적으로 Artifact와 동일하게 사용)
@@ -70,26 +69,27 @@ Spring Boot는 기본적인 설정과 보일러 플레이트 코드의 작성을
 Web Server는 정적인 파일을 제공하는 역할을 한다. 대표적으로 Apache와 NginX가 있다. Web Server 클라이언트의 요청을 받아들이고 그에 맞는 정적 파일을 응답으로 제공한다. Web Server는 주로 웹페이지의 전달과 같은 단순한 기능을 수행하는 역할을 담당한다.
 
 ✔ Web Server의 주요 기능
+
 - HTTP 프로토콜 지원
-Web Server는 클라이언트와 서버 간 통신에 사용되는 HTTP 프로토콜을 지원
+  Web Server는 클라이언트와 서버 간 통신에 사용되는 HTTP 프로토콜을 지원
 - 정적 파일 제공
-Web Server는 클라이언트가 요청한 정적인 컨텐츠 제공(HTML, Image, CSS)
+  Web Server는 클라이언트가 요청한 정적인 컨텐츠 제공(HTML, Image, CSS)
 - MIME 타입 처리
-Web Server는 MIME(Multipurpose Internet Mail Extensions) 타입을 처리하여 클라이언트에게 올바른 파일 형식으로 데이터를 전송
+  Web Server는 MIME(Multipurpose Internet Mail Extensions) 타입을 처리하여 클라이언트에게 올바른 파일 형식으로 데이터를 전송
 - 가상 호스팅
-Web Server는 하나의 서버에서 여러 개의 도메인을 호스팅할 수 있도록 가상 호스팅(Virtual Hosting) 지원
+  Web Server는 하나의 서버에서 여러 개의 도메인을 호스팅할 수 있도록 가상 호스팅(Virtual Hosting) 지원
 - 로깅
-Web Server는 서버에 접근한 클라이언트의 정보를 로그 파일에 저장하여 추적 및 분석 가능
+  Web Server는 서버에 접근한 클라이언트의 정보를 로그 파일에 저장하여 추적 및 분석 가능
 - 보안 기능
-Web Server는 SSL(Secure Socket Layer) 및 TLS(Transport Layer Security) 프로토콜을 지원하여 데이터의 보안 유지
+  Web Server는 SSL(Secure Socket Layer) 및 TLS(Transport Layer Security) 프로토콜을 지원하여 데이터의 보안 유지
 - Web Server 소프트웨어 확장성
-Web Server는 다양한 소프트웨어 확장 기능을 제공
+  Web Server는 다양한 소프트웨어 확장 기능을 제공
 
 Web Application Server는 동적인 컨텐츠를 생성하고, 데이터를 처리하는 역할을 한다. 사용자의 요청에 따라 데이터베이스 조회, 비즈니스 로직 처리 등의 작업을 수행한다. 웹 애플리케이션의 실행 환경을 제공하며, 동적인 응답을 생성한다.
 
 ### Tomcat
 
-아파치는 흔히 아파치라고 부르는 Apache Software Foundation에서 만든 웹서버 프로그램이다. 
+아파치는 흔히 아파치라고 부르는 Apache Software Foundation에서 만든 웹서버 프로그램이다.
 아파치 서버는 클라이언트에서 요청하는 HTTP 요청을 처리하는 웹서버를 의미한다. 정적 타입 데이터만을 처리하기 때문에 톰캣이 추가되었다.
 
 톰캣 WAS(Web Application Server)은 아파치 서버와는 다르게 DB연결, 다른 응용프로그램과 상호 작용 등 동적인 기능들을 사용할 수 있다.
@@ -115,12 +115,12 @@ View는 Controller에 연결되어 화면을 구성하는 단위요소이므로 
 스프링에서의 관심사의 분리는 다음과 같은 방식으로 이뤄진다.
 
 1. 의존성 주입<br/>
-    : 의존성 주입은 객체 간의 의존성을 외부에서 주입하는 방식으로, 객체 간의 결합도를 낮추어 각 객체는 자신이 수행해야 할 기능에만 집중할 수 있으며, 객체 간의 의존성을 분리 할 수 있다.
+   : 의존성 주입은 객체 간의 의존성을 외부에서 주입하는 방식으로, 객체 간의 결합도를 낮추어 각 객체는 자신이 수행해야 할 기능에만 집중할 수 있으며, 객체 간의 의존성을 분리 할 수 있다.
 
 2. 제어 역전<br/>
-    : 제어 역전은 객체의 생명주기와 의존성 관리를 프레임워크가 담당하도록 하는 개념이다. 스프링은 제어 역전을 통해 객체의 생성, 관리, 소멸 등의 생명 주기를 관리하고, 필요한 의존성을 주입한다. 
+   : 제어 역전은 객체의 생명주기와 의존성 관리를 프레임워크가 담당하도록 하는 개념이다. 스프링은 제어 역전을 통해 객체의 생성, 관리, 소멸 등의 생명 주기를 관리하고, 필요한 의존성을 주입한다.
 3. 관점 지향 프로그래밍<br/>
-    : AOP는 애플리케이션의 핵심 로직과 관련 없는 부가적인 기능들을 모둘화하여 분리하는 방식이다. 이를 통해 핵심 로직의 코드는 더욱 간결해지고, 부가적인 기능은 별도의 모듈로 분리하여 관리할 수 있다.
+   : AOP는 애플리케이션의 핵심 로직과 관련 없는 부가적인 기능들을 모둘화하여 분리하는 방식이다. 이를 통해 핵심 로직의 코드는 더욱 간결해지고, 부가적인 기능은 별도의 모듈로 분리하여 관리할 수 있다.
 
 ### Java Annotation
 
@@ -139,10 +139,9 @@ Annotation이란 자바 소스코드에 추가하여 사용할 수 있는 메타
 
 ```
 
-
 ### @RestController
 
-```@RestController```는 ```@Controller```에 ```@ResponseBody```가 추가된 것이다.  RestController의 주용도는 Json 형태로 객체 데이터를 반환하는 것이다. 최근에 데이터를 응답으로 제공하는 REST API를 개발할 때 주로 사용하며 객체를 ResponseEntity로 감싸서 반환한다. 이러한 이유로 동작 과정 역시 @Controller에 @ReponseBody를 붙인 것과 완벽히 동일하다.
+`@RestController`는 `@Controller`에 `@ResponseBody`가 추가된 것이다. RestController의 주용도는 Json 형태로 객체 데이터를 반환하는 것이다. 최근에 데이터를 응답으로 제공하는 REST API를 개발할 때 주로 사용하며 객체를 ResponseEntity로 감싸서 반환한다. 이러한 이유로 동작 과정 역시 @Controller에 @ResponseBody를 붙인 것과 완벽히 동일하다.
 
 ```java
 @Controller
@@ -157,19 +156,19 @@ public class App{
 }
 ```
 
-```@RestController```로 작성하면 모든 메서드가 뷰 대신 객체로 작성된다.
-Restful 웹 서비스를 만드는 경우 ```@RestController```를 사용하는게 더 좋다고 한다.
+`@RestController`로 작성하면 모든 메서드가 뷰 대신 객체로 작성된다.
+Restful 웹 서비스를 만드는 경우 `@RestController`를 사용하는게 더 좋다고 한다.
 직접 사용해보면서 차이점에 대해 느껴보는 것이 좋을 것 같다.
 
 ### @Controller
 
-뷰에 표시될 데이터가 있는 Model 객체를 만들고 올바른 뷰를 선택하는 일을 담당한다. ```@Controller```는 클래스를 Spring MVC 컨트롤러로 표시하는 데 사용된다.
+뷰에 표시될 데이터가 있는 Model 객체를 만들고 올바른 뷰를 선택하는 일을 담당한다. `@Controller`는 클래스를 Spring MVC 컨트롤러로 표시하는 데 사용된다.
 
 ### @ResponseBody
 
 서버에서 클라이언트에 응답을 보낼 때, 본문에 데이터를 담아서 보내는데, 요청 본문(RequestBody), 응답 본문(ResponseBody)을 담아서 보내야한다.
 
-```@ResponseBody```가 붙은 파라미터에는 HTTP 요청의 본문 body 부분으로 매핑하여 클라이언트로 전송한다.
+`@ResponseBody`가 붙은 파라미터에는 HTTP 요청의 본문 body 부분으로 매핑하여 클라이언트로 전송한다.
 
 이 어노테이션을 사용하면 http 요청 body를 자바 객체로 전달받을 수 있다.
 
