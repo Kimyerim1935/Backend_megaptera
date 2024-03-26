@@ -7,3 +7,6 @@
   - [HTTP Server](/HTTP/HTTP%20Server.md)
   - [Java HTTP Server](/HTTP/Java%20HTTP%20Server.md)
   - [Spring Web MVC](/HTTP/Spring%20Web%20MVC.md)
+- [REST API](/REST%20API/README.md)
+  - [REST API](/REST%20API/REST%20API.md)
+  - [URI & MIME Type](/REST%20API/URI&MIME%20TYPE.md)
