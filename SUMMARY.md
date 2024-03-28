@@ -10,3 +10,5 @@
 - [REST API](/REST%20API/README.md)
   - [REST API](/REST%20API/REST%20API.md)
   - [URI & MIME Type](/REST%20API/URI&MIME%20TYPE.md)
+  - [Collection Pattern](/REST%20API/Collection%20Pattern.md)
+  - [Spring Web MVC로 구현](/REST%20API/Spring%20Web%20MVC로%20구현.md)
