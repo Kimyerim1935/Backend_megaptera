@@ -35,3 +35,4 @@
   - [JdbcTemplate](/Database/JdbcTemplate.md)
 - [JPA](/JPA/README.md)
   - [ORM](/JPA/ORM.md)
+  - [Hibernate](/JPA/Hibernate.md)
