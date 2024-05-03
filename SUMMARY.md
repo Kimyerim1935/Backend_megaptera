@@ -33,3 +33,5 @@
   - [Entity-Relationship Model](/Database/Entity-Relationship%20Model.md)
   - [JDBC](/Database/JDBC.md)
   - [JdbcTemplate](/Database/JdbcTemplate.md)
+- [JPA](/JPA/README.md)
+  - [ORM](/JPA/ORM.md)
