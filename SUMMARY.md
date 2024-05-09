@@ -36,7 +36,7 @@
 - [JPA](/JPA/README.md)
   - [ORM](/JPA/ORM.md)
   - [Hibernate](/JPA/Hibernate.md)
-- [도메인 주도 설계](/도메인%20주도%20설계/README.md)
+- [Domain](/도메인%20주도%20설계/README.md)
   - [DDD](/도메인%20주도%20설계/DDD.md)
   - [Strategic Design](/도메인%20주도%20설계/Strategic%20Design.md)
   - [Entity Value Object](/도메인%20주도%20설계/Entity%20Value%20Object.md)
