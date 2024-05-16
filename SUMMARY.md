@@ -42,3 +42,7 @@
   - [Entity Value Object](/도메인%20주도%20설계/Entity%20Value%20Object.md)
   - [Aggregate](/도메인%20주도%20설계/Aggregate.md)
   - [Repository](/도메인%20주도%20설계/Repository.md)
+- [Hexagonal Architecture](/Hexagonal%20Architecture/README.md)
+  - [SOLID](/Hexagonal%20Architecture/SOLID.md)
+  - [Hexagonal Architecture](/Hexagonal%20Architecture/Hexagonal%20Architecture.md)
+  - [Domain Driven Design](/Hexagonal%20Architecture/DomainDrivenDesign.md)
