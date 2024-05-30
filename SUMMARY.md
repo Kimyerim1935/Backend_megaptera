@@ -52,6 +52,7 @@
   - [로그인&로그아웃](/Spring%20Security/로그인&로그아웃.md)
   - [회원가입](/Spring%20Security/회원가입.md)
   - [JWT & Authority](/Spring%20Security/JWT&Authority.md) -[File Upload](/File%20Upload/README.md)
+- [File Upload](/File%20Upload/README.md)
   - [Multipart FormData](/File%20Upload/Multipart%20FormData.md)
   - [Separation of Concerns](/File%20Upload/Separation%20of%20Concerns.md)
   - [Cloudinary](/File%20Upload/Cloudinary.md)
